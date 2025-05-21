@@ -4,6 +4,14 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 
+<https://highered.tech/ontology> a owl:Ontology ;
+    dcterms:creator "HigherEd.Tech" ;
+    dcterms:description "An ontology for describing relational database structures in the context of higher education." ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:title "HigherEdTech Ontology" ;
+    rdfs:seeAlso <https://higheredtech.github.io/higheredtech-ontology/higheredtech.ttl> ;
+    owl:imports <https://higheredtech.github.io/higheredtech-ontology/higheredtech.ttl> .
+
 higheredtech:belongsToTable a owl:ObjectProperty ;
     rdfs:label "belongs to table" ;
     rdfs:comment "Indicates the table to which this column belongs." ;
