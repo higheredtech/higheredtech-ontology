@@ -1,0 +1,104 @@
+{
+    "@context": {
+        "higheredtech": "https://highered.tech/ontology#",
+        "schema": "https://schema.org/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "hydra": "http://www.w3.org/ns/hydra/core#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "Course": "schema:Course",
+        "CourseInstance": "schema:CourseInstance",
+        "name": "schema:name",
+        "description": "schema:description",
+        "identifier": "schema:courseCode",
+        "term": "higheredtech:term",
+        "creditHours": "higheredtech:creditHours",
+        "revisionDate": {
+            "@id": "schema:dateModified",
+            "@type": "xsd:date"
+        },
+        "courseDirector": "higheredtech:courseDirector",
+        "schedule": {
+            "@id": "higheredtech:schedule",
+            "@container": "@set"
+        },
+        "prerequisites": {
+            "@id": "schema:coursePrerequisites",
+            "@container": "@set"
+        },
+        "corequisites": {
+            "@id": "higheredtech:corequisites",
+            "@container": "@set"
+        },
+        "programLearningOutcomes": {
+            "@id": "higheredtech:programLearningOutcomes",
+            "@container": "@list"
+        },
+        "courseLearningOutcomes": {
+            "@id": "higheredtech:courseLearningOutcomes",
+            "@container": "@list"
+        },
+        "courseGoals": {
+            "@id": "higheredtech:courseGoals",
+            "@container": "@list"
+        },
+        "syllabusSections": {
+            "@id": "higheredtech:syllabusSections",
+            "@container": "@list",
+            "@context": {
+                "identifier": "higheredtech:identifier",
+                "title": "schema:name",
+                "learningObjectives": {
+                    "@id": "higheredtech:learningObjectives",
+                    "@container": "@list"
+                },
+                "topics": {
+                    "@id": "higheredtech:topics",
+                    "@container": "@list"
+                },
+                "instructionalMethods": {
+                    "@id": "higheredtech:instructionalMethods",
+                    "@container": "@list"
+                },
+                "assessmentMethods": {
+                    "@id": "higheredtech:assessmentMethods",
+                    "@container": "@list"
+                },
+                "competencies": {
+                    "@id": "higheredtech:competencies",
+                    "@container": "@list"
+                },
+                "timeRequired": {
+                    "@id": "higheredtech:timeRequired",
+                    "@type": "xsd:duration"
+                }
+            }
+        },
+        "PersonContact": "higheredtech:PersonContact",
+        "email": {
+            "@id": "schema:email",
+            "@type": "xsd:string"
+        },
+        "officeHours": "higheredtech:officeHours",
+        "officeLocation": "higheredtech:officeLocation",
+        "Meeting": "higheredtech:Meeting",
+        "day": "higheredtech:day",
+        "startTime": {
+            "@id": "higheredtech:startTime",
+            "@type": "xsd:time"
+        },
+        "endTime": {
+            "@id": "higheredtech:endTime",
+            "@type": "xsd:time"
+        },
+        "location": "higheredtech:location",
+        "LearningOutcome": "higheredtech:LearningOutcome",
+        "code": "higheredtech:code",
+        "alignmentType": "higheredtech:alignmentType",
+        "targetCompetency": "higheredtech:targetCompetency",
+        "ProgramOutcome": "higheredtech:ProgramOutcome",
+        "id": "higheredtech:id",
+        "CourseSyllabus": "higheredtech:CourseSyllabus",
+        "supportedClass": "hydra:supportedClass",
+        "hasFormat": "dcterms:hasFormat"
+    }
+}
