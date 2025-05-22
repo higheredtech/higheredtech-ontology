@@ -10,7 +10,9 @@
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:title "HigherEdTech Ontology" ;
     rdfs:seeAlso <https://higheredtech.github.io/higheredtech-ontology/higheredtech.ttl> ;
-    owl:imports <https://higheredtech.github.io/higheredtech-ontology/higheredtech.ttl> .
+    owl:imports <https://higheredtech.github.io/higheredtech-ontology/higheredtech.ttl> ;
+    dcterms:hasFormat <https://highered.tech/ontology/syllabus.schema.json> ;
+    hydra:supportedClass higheredtech:CourseSyllabus . 
 
 higheredtech:belongsToTable a owl:ObjectProperty ;
     rdfs:label "belongs to table" ;
