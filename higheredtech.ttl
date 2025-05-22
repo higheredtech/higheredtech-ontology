@@ -6,7 +6,7 @@
 
 <https://highered.tech/ontology> a owl:Ontology ;
     dcterms:creator "HigherEd.Tech" ;
-    dcterms:description "An ontology for describing relational database structures in the context of higher education." ;
+    dcterms:description "An ontology for all things for graduate level physician assistant/associate (PA) education." ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:title "HigherEdTech Ontology" ;
     rdfs:seeAlso <https://higheredtech.github.io/higheredtech-ontology/higheredtech.ttl> ;
