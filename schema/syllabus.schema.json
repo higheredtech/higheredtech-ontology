@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://highered.tech/ontology/syllabus.schema.json",
+  "title": "higheredtech:CourseSyllabus",
+  "description": "A structured JSON profile for academic course syllabi, layering schema.org Course/LRMI terms with MedBiquitous curriculum concepts. Designed for AI agents that ingest and emit validated syllabus data for Physician Assistant programs.",
+  "type": "object",
+  "required": ["@context", "@type", "identifier", "name", "description", "term", "creditHours", "syllabusSections"],
+  "properties": {
+    "@context": {
+      "description": "JSON‑LD context defining schema.org plus the higheredtech namespace.",
+      "oneOf": [
+        {"type": "string"},
+        {"type": "object"}
+      ]
+    },
+    "@type": {
+      "description": "Must be the schema.org type for a course resource.",
+      "const": "Course"
+    },
+    "identifier": {
+      "description": "Course code or other unique identifier (maps to schema.org/courseCode).",
+      "type": "string"
+    },
+    "name": {
+      "description": "Official course title (schema.org/name).",
+      "type": "string"
+    },
+    "description": {
+      "description": "Expanded catalog description (schema.org/description).",
+      "type": "string"
+    },
+    "term": {
+      "description": "Academic term or session (e.g. ‘Spring 2025’) (higheredtech:term).",
+      "type": "string"
+    },
+    "creditHours": {
+      "description": "Number of quarter/semester credit hours (higheredtech:creditHours).",
+      "type": "number",
+      "minimum": 0
+    },
+    "revisionDate": {
+      "description": "Last syllabus revision date (schema.org/dateModified).",
+      "type": "string",
+      "format": "date"
+    },
+    "courseDirector": {
+      "$ref": "#/definitions/PersonContact"
+    },
+    "schedule": {
+      "description": "Regularly scheduled class meetings (maps to schema.org/CourseInstance).",
+      "type": "array",
+      "items": {"$ref": "#/definitions/Meeting"}
+    },
+    "prerequisites": {
+      "description": "List of prerequisite courses or requirements (schema.org/coursePrerequisites).",
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "corequisites": {
+      "description": "List of corequisite courses.",
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "courseLearningOutcomes": {
+      "description": "Outcome statements students must achieve (LRMI alignmentObject).",
+      "type": "array",
+      "items": {"$ref": "#/definitions/LearningOutcome"}
+    },
+    "programLearningOutcomes": {
+      "description": "Higher‑level program outcomes (maps to MedBiq competency objects).",
+      "type": "array",
+      "items": {"$ref": "#/definitions/ProgramOutcome"}
+    },
+    "courseGoals": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "syllabusSections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/definitions/SyllabusSection"}
+    }
+  },
+  "definitions": {
+    "PersonContact": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string"},
+        "email": {"type": "string", "format": "email"},
+        "officeHours": {"type": "string"},
+        "officeLocation": {"type": "string"}
+      }
+    },
+    "Meeting": {
+      "type": "object",
+      "required": ["day", "startTime", "endTime", "location"],
+      "properties": {
+        "day": {"type": "string"},
+        "startTime": {"type": "string", "pattern": "^[0-9]{2}:[0-9]{2}$"},
+        "endTime": {"type": "string", "pattern": "^[0-9]{2}:[0-9]{2}$"},
+        "location": {"type": "string"}
+      }
+    },
+    "LearningOutcome": {
+      "type": "object",
+      "required": ["code", "description"],
+      "properties": {
+        "code": {"type": "string"},
+        "description": {"type": "string"},
+        "alignmentType": {
+          "type": "string",
+          "enum": ["assesses", "teaches", "requires"]
+        },
+        "targetCompetency": {"type": "string"}
+      }
+    },
+    "ProgramOutcome": {
+      "type": "object",
+      "required": ["id", "description"],
+      "properties": {
+        "id": {"type": "string"},
+        "description": {"type": "string"}
+      }
+    },
+    "SyllabusSection": {
+      "type": "object",
+      "required": ["identifier", "title"],
+      "properties": {
+        "identifier": {"type": "string"},
+        "title": {"type": "string"},
+        "learningObjectives": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/LearningOutcome"}
+        },
+        "topics": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "instructionalMethods": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "assessmentMethods": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "competencies": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "timeRequired": {
+          "description": "Expected duration (ISO 8601 duration string).",
+          "type": "string",
+          "pattern": "^P.*"
+        }
+      }
+    }
+  }
+}
