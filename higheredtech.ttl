@@ -14,38 +14,49 @@
     dcterms:hasFormat <https://ontology.highered.tech/schema/syllabus.schema.json> ;
     hydra:supportedClass higheredtech:CourseSyllabus . 
 
-higheredtech:belongsToTable a owl:ObjectProperty ;
-    rdfs:label "belongs to table" ;
-    rdfs:comment "Indicates the table to which this column belongs." ;
-    rdfs:domain higheredtech:Column ;
-    rdfs:range higheredtech:Table ;
-    owl:sameAs schema:isPartOf .
 
-higheredtech:description a owl:AnnotationProperty ;
-    owl:sameAs dcterms:description .
 
-higheredtech:hasColumn a owl:ObjectProperty ;
-    rdfs:label "has column" ;
-    rdfs:comment "Indicates a column that is part of a table." ;
-    rdfs:domain higheredtech:Table ;
-    rdfs:range higheredtech:Column ;
-    owl:sameAs schema:hasPart .
 
-higheredtech:hasDataType a owl:DatatypeProperty ;
-    rdfs:label "has data type" ;
-    rdfs:comment "Indicates the data type of the column." ;
-    rdfs:domain higheredtech:Column ;
-    rdfs:range rdfs:Literal ;
-    owl:sameAs schema:rangeIncludes .
 
-higheredtech:Table a owl:Class ;
-    rdfs:label "Table" ;
-    rdfs:comment "A relational database table." ;
-    owl:sameAs <http://www.w3.org/ns/dcat#Dataset>,
-        schema:Dataset .
 
-higheredtech:Column a owl:Class ;
-    rdfs:label "Column" ;
-    rdfs:comment "A column within a relational database table." ;
-    owl:sameAs schema:PropertyValue .
+
+# ------------------------------------------------------
+# FUTURE ONTOLOGY ELEMENTS FOR RELATIONAL TABLE MAPPING
+# ------------------------------------------------------
+
+# higheredtech:belongsToTable a owl:ObjectProperty ;
+#     rdfs:label "belongs to table" ;
+#     rdfs:comment "Indicates the table to which this column belongs." ;
+#     rdfs:domain higheredtech:Column ;
+#     rdfs:range higheredtech:Table ;
+#     owl:sameAs schema:isPartOf .
+
+# higheredtech:description a owl:AnnotationProperty ;
+#     owl:sameAs dcterms:description .
+
+# higheredtech:hasColumn a owl:ObjectProperty ;
+#     rdfs:label "has column" ;
+#     rdfs:comment "Indicates a column that is part of a table." ;
+#     rdfs:domain higheredtech:Table ;
+#     rdfs:range higheredtech:Column ;
+#     owl:sameAs schema:hasPart .
+
+# higheredtech:hasDataType a owl:DatatypeProperty ;
+#     rdfs:label "has data type" ;
+#     rdfs:comment "Indicates the data type of the column." ;
+#     rdfs:domain higheredtech:Column ;
+#     rdfs:range rdfs:Literal ;
+#     owl:sameAs schema:rangeIncludes .
+
+# higheredtech:Table a owl:Class ;
+#     rdfs:label "Table" ;
+#     rdfs:comment "A relational database table." ;
+#     owl:sameAs <http://www.w3.org/ns/dcat#Dataset>,
+#         schema:Dataset .
+
+# higheredtech:Column a owl:Class ;
+#     rdfs:label "Column" ;
+#     rdfs:comment "A column within a relational database table." ;
+#     owl:sameAs schema:PropertyValue .
+
 
