@@ -66,8 +66,8 @@ A comprehensive, domain-specific ontology is crucial in educational technology. 
 ## 5. Key Components of the PA Education Ontology
 
 ### 5.1 Professional Competencies
-- Entry-Level
-- Experience PA
+- Entry-Level PA
+- Experienced PA
 
 ### 5.2 Educational Structures and Curriculum
 - Phases
