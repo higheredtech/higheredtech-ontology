@@ -3,9 +3,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://ontology.highered.tech/schema/syllabus.schema.json",
     "title": "higheredtech:CourseSyllabus",
-    "description":  "A structured JSON profile for academic course syllabi, layering schema.org 
-                    Course/LRMI terms with MedBiquitous curriculum concepts. Designed for AI agents 
-                    that ingest and emit validated syllabus data for Physician Assistant programs.",
+    "description":  "A structured JSON profile for academic course syllabi, layering schema.org Course/LRMI terms with MedBiquitous curriculum concepts. Designed for AI agents that ingest and emit validated syllabus data for Physician Assistant programs.",
     "type": "object",
     "required": [
         "@context",
