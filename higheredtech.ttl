@@ -5,10 +5,10 @@
 @prefix schema: <https://schema.org/> .
 
 <https://ontology.highered.tech/> a owl:Ontology ;
-    dcterms:creator "HigherEd.Tech" ;
-    dcterms:description "An ontology for all things for graduate level physician assistant/associate (PA) education." ;
+    dcterms:creator "HigherEdTech" ;
+    dcterms:description "An ontology for all things for graduate level Physician Assistant/Associate (PA) education." ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:title "HigherEdTech Ontology" ;
+    dcterms:title "PA Education Ontology" ;
     rdfs:seeAlso <https://ontology.highered.tech/higheredtech.ttl> ;
     owl:imports <https://ontology.highered.tech/higheredtech.ttl> ;
     dcterms:hasFormat <https://ontology.highered.tech/schema/syllabus.schema.json> ;
