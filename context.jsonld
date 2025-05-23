@@ -1,6 +1,6 @@
 {
     "@context": {
-        "higheredtech": "http://ontology.highered.tech/",
+        "higheredtech": "https://ontology.highered.tech/",
         "schema": "https://schema.org/",
         "dcterms": "http://purl.org/dc/terms/",
         "hydra": "http://www.w3.org/ns/hydra/core#",
